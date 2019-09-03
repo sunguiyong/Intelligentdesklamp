@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorGray">#FDFDFD</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorLineGray">#E9E7E7</color>
+    <color name="btn_unpressed">#0AB799</color>
+    <color name="btn_pressed">#08927A</color>
+    <color name="btn_darkGray">#9F9F9F</color>
+    <color name="login_btn_pressed">#DADADA</color>
+    <color name="toolbar">#A9CB06</color>
+    <color name="backgroundnormal">#F4F4F4</color>
+    <color name="dialog">#AA141414</color>
+    <color name="gray">#dad6d6</color>
+    <color name="black">#000000</color>
+    <color name="toolbarcolor">#A9CB06</color>
+    <color name="normaltextcolor">#595959</color>
+    <color name="item_edit">#00AEEA</color>
+    <color name="item_delete">#F7525B</color>
+
+
+</resources>

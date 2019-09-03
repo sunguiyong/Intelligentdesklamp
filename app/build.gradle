@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.scinan.intelligentdesklamp"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //PickerView联动选择
+    implementation 'com.contrarywind:Android-PickerView:4.1.8'
+    //eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    //listview侧滑删除
+    implementation 'com.baoyz.swipemenulistview:library:1.3.0'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    //底部tab
+    implementation 'com.hjm:BottomTabBar:1.1.1'
+    //底部dialog
+    implementation 'com.github.shaoshuai904:iOS_Style_Dialog:1.2.3'
+
+    //volley
+    implementation 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    implementation 'com.android.support:support-annotations:28.0.0'
+
+    implementation 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.google.android.material:material:1.0.0'
+}

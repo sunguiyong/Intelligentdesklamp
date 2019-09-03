@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundnormal"
+    android:orientation="vertical"
+    tools:context=".views.setdevice.SetDeviceFragment">
+
+    <include layout="@layout/toolbar_set_device" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/switch_bt"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/circlebtn_click" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="开关" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/posture_bt"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/circlebtn_click" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="坐姿提醒" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/rest_tv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/circlebtn_click" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="休息提示" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:text="亮度调节"
+                android:textColor="@color/normaltextcolor"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp">
+
+                <SeekBar
+                    android:id="@+id/seekBar_light"
+                    style="@style/Widget.AppCompat.SeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@id/auto_tv"
+                    android:max="9"
+                    android:min="0" />
+                <TextView
+                    android:id="@+id/auto_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/checkBox_light"
+                    android:gravity="center_vertical"
+                    android:text="自动" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_light"
+                    style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text="" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:text="音量调节"
+                android:textColor="@color/normaltextcolor"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp">
+
+                <SeekBar
+                    android:id="@+id/seekBar_volume"
+                    style="@style/Widget.AppCompat.SeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@id/auto_tv1"
+                    android:max="9"
+                    android:min="0" />
+
+                <TextView
+                    android:id="@+id/auto_tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/checkBox_volume"
+                    android:gravity="center_vertical"
+                    android:text="自动"
+                    android:visibility="invisible" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_volume"
+                    style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
