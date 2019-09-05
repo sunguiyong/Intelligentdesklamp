@@ -19,6 +19,7 @@
     <color name="normaltextcolor">#595959</color>
     <color name="item_edit">#00AEEA</color>
     <color name="item_delete">#F7525B</color>
+    <color name="chartcircle">#00AEEA</color>
 
 
 </resources>

@@ -13,6 +13,9 @@ import com.scinan.intelligentdesklamp.views.datashow.contentfragment.UseTimeFrag
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 配置数据fragment中的子fragment
+ */
 public class DataShowContentAdapter extends FragmentPagerAdapter {
     private List<String> names;
 

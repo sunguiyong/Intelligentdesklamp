@@ -59,7 +59,8 @@ public class DateAndTimeActivity extends BaseActivity implements View.OnClickLis
     TextView timeTv;
 
     private DateAndTimeEvent dateAndTimeEvent = new DateAndTimeEvent();
-    private List<CardItem> cardItems=new ArrayList<>();
+    private List<CardItem> cardItems = new ArrayList<>();
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -73,13 +74,13 @@ public class DateAndTimeActivity extends BaseActivity implements View.OnClickLis
                 OptionsPickerView opv = new OptionsPickerBuilder(this, new OnOptionsSelectListener() {
                     @Override
                     public void onOptionsSelect(int options1, int options2, int options3, View v) {
-                        String tx=cardItems.get(options1).getPickerViewText();
+                        String tx = cardItems.get(options1).getPickerViewText();
                     }
                 })
                         .setLayoutRes(R.layout.pickerview_custom_options, new CustomListener() {
                             @Override
                             public void customLayout(View v) {
-                                final TextView title=(TextView)findViewById(R.id.title_tv);
+                                final TextView title = (TextView) findViewById(R.id.title_tv);
 
                             }
                         })
@@ -96,7 +97,7 @@ public class DateAndTimeActivity extends BaseActivity implements View.OnClickLis
                 break;
             }
             case R.id.timezoon_rl: {
-
+                break;
             }
         }
     }
@@ -135,6 +136,7 @@ public class DateAndTimeActivity extends BaseActivity implements View.OnClickLis
     @Override
     public void initData() {
         EventBus.getDefault().register(this);
+        EventBus.getDefault().post(dateAndTimeEvent);
     }
 
     @Override
@@ -148,8 +150,19 @@ public class DateAndTimeActivity extends BaseActivity implements View.OnClickLis
         EventBus.getDefault().unregister(this);
     }
 
-    @Subscribe(threadMode = ThreadMode.POSTING)
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMainEvent(final DateAndTimeEvent dateAndTimeEvent) {
+        if (dateAndTimeEvent.isAutoDateAndTime()) {
+            showToast("开始了");
+        } else {
+            showToast("不行");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    settimeTv.setTextColor(getResources().getColor(R.color.normaltextcolor));
+                }
+            });
 
+        }
     }
 }

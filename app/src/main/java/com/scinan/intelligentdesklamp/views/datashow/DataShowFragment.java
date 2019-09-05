@@ -54,9 +54,9 @@ public class DataShowFragment extends BaseFragment implements View.OnClickListen
     @Override
     public void initData() {
         initFragment();
-        int i=3;
-        String s=i+++"1";
-        Log.d("s",s);
+        int i = 3;
+        String s = i++ + "1";
+        Log.d("s", s);
     }
 
     @Override
@@ -65,6 +65,7 @@ public class DataShowFragment extends BaseFragment implements View.OnClickListen
     }
 
     private void initFragment() {
+        viewpager.setOffscreenPageLimit(4);
         tablayout.addTab(tablayout.newTab().setText("坐姿"));
         tablayout.addTab(tablayout.newTab().setText("左眼视力"));
         tablayout.addTab(tablayout.newTab().setText("右眼视力"));
@@ -74,8 +75,6 @@ public class DataShowFragment extends BaseFragment implements View.OnClickListen
         viewpager.setAdapter(adapter);
         tablayout.setupWithViewPager(viewpager);
         initTabData();
-        Log.d("size", names.size() + "");
-        showToast(names.size() + "");
         adapter.setList(names);
     }
 
